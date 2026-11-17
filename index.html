@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chaveiro Norte 24h — Abertura de Porta e Chaves em Florianópolis | Ingleses</title>
+  <meta name="description" content="Chaveiro residencial, automotivo e emergência 24h em Florianópolis (Ingleses). Abertura de porta sem estragar fechadura, cópia de chave e plantão no Norte da Ilha. WhatsApp: (48) 99102-7744." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            charcoal: '#141210',
+            coal: '#1c1915',
+            smoke: '#2a2620',
+            cream: '#f7f3eb',
+            parchment: '#ebe4d8',
+            amber: '#e8a317',
+            gold: '#f5c451',
+            brass: '#c9922e'
+          },
+          fontFamily: {
+            display: ['Syne', 'system-ui', 'sans-serif'],
+            sans: ['"DM Sans"', 'system-ui', 'sans-serif']
+          },
+          boxShadow: {
+            glow: '0 0 40px rgba(232,163,23,.28)'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: "DM Sans", system-ui, sans-serif; }
+    .font-display { font-family: Syne, system-ui, sans-serif; }
+    .glass {
+      background: rgba(20, 18, 16, 0.78);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .hero-bg {
+      background:
+        linear-gradient(115deg, rgba(20,18,16,.92) 0%, rgba(28,25,21,.62) 42%, rgba(20,18,16,.88) 100%),
+        url('images/hero.jpg') center/cover no-repeat;
+    }
+    .mesh {
+      background:
+        radial-gradient(ellipse 70% 55% at 5% 15%, rgba(232,163,23,.12), transparent 50%),
+        radial-gradient(ellipse 55% 45% at 95% 8%, rgba(245,196,81,.1), transparent 45%),
+        linear-gradient(180deg, #f7f3eb 0%, #ebe4d8 48%, #f7f3eb 100%);
+    }
+    .service-card {
+      transition: transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s ease, border-color .35s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 48px rgba(20,18,16,.14);
+      border-color: rgba(232,163,23,.5);
+    }
+    .gallery-item img {
+      transition: transform .7s cubic-bezier(.22,1,.36,1);
+    }
+    .gallery-item:hover img { transform: scale(1.06); }
+    .float-wa {
+      animation: bob 3.2s ease-in-out infinite;
+    }
+    @keyframes bob {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity .7s ease, transform .7s cubic-bezier(.22,1,.36,1);
+    }
+    .reveal.in { opacity: 1; transform: none; }
+    .pulse-dot {
+      box-shadow: 0 0 0 0 rgba(232,163,23,.55);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      70% { box-shadow: 0 0 0 10px rgba(232,163,23,0); }
+      100% { box-shadow: 0 0 0 0 rgba(232,163,23,0); }
+    }
+    #lightbox { opacity: 0; pointer-events: none; transition: opacity .25s ease; }
+    #lightbox.open { opacity: 1; pointer-events: auto; }
+    .estimator-option.selected {
+      border-color: #e8a317;
+      background: rgba(232,163,23,.1);
+      box-shadow: 0 0 0 1px #e8a317;
+    }
+    .badge-24h {
+      background: linear-gradient(135deg, #e8a317, #f5c451);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+  </style>
+</head>
+<body class="bg-cream text-charcoal antialiased">
+
+  <header class="fixed top-0 inset-x-0 z-50">
+    <div class="glass border-b border-white/10">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 h-[4.25rem] flex items-center justify-between gap-3">
+        <a href="#topo" class="font-display font-extrabold text-base sm:text-lg tracking-tight text-white leading-tight">
+          Chaveiro<span class="text-amber"> Norte</span><span class="text-white/70 text-sm font-bold"> 24h</span>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-7 text-sm text-white/80">
+          <a href="#servicos" class="hover:text-amber transition">Serviços</a>
+          <a href="#galeria" class="hover:text-amber transition">Galeria</a>
+          <a href="#confianca" class="hover:text-amber transition">Confiança</a>
+          <a href="#orcamento" class="hover:text-amber transition">Orçamento</a>
+          <a href="#contato" class="hover:text-amber transition">Contato</a>
+        </nav>
+
+        <div class="flex items-center gap-2 sm:gap-3">
+          <span class="hidden sm:inline-flex items-center gap-2 rounded-full bg-white/10 border border-white/15 px-3 py-1.5 text-[11px] font-semibold text-white/95">
+            <span class="h-2 w-2 rounded-full bg-amber pulse-dot"></span>
+            Agenda Aberta para Esta Semana
+          </span>
+          <a href="https://wa.me/5548991027744?text=Ol%C3%A1%2C%20preciso%20de%20um%20chaveiro%20agora%20em%20Florian%C3%B3polis."
+             target="_blank" rel="noopener"
+             class="inline-flex items-center justify-center rounded-full bg-amber px-3.5 sm:px-4 py-2 text-xs sm:text-sm font-bold text-charcoal hover:brightness-110 transition shadow-glow">
+            Chamar no WhatsApp
+          </a>
+          <button id="menuBtn" class="md:hidden text-white p-2" aria-label="Abrir menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+          </button>
+        </div>
+      </div>
+      <div id="mobileMenu" class="hidden md:hidden border-t border-white/10 px-4 pb-4">
+        <div class="flex flex-col gap-3 pt-3 text-sm text-white/85">
+          <a href="#servicos" class="py-1">Serviços</a>
+          <a href="#galeria" class="py-1">Galeria</a>
+          <a href="#confianca" class="py-1">Confiança</a>
+          <a href="#orcamento" class="py-1">Orçamento</a>
+          <a href="#contato" class="py-1">Contato</a>
+          <span class="inline-flex items-center gap-2 text-[11px] font-semibold text-amber pt-1">
+            <span class="h-2 w-2 rounded-full bg-amber"></span> Agenda Aberta para Esta Semana
+          </span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="topo">
+    <section class="hero-bg relative min-h-[100svh] flex items-end sm:items-center">
+      <div class="absolute inset-0 bg-gradient-to-t from-charcoal via-transparent to-charcoal/50"></div>
+      <div class="relative mx-auto max-w-6xl px-4 sm:px-6 w-full pt-28 pb-16 sm:py-32">
+        <div class="flex flex-wrap items-center gap-3 mb-4 reveal">
+          <span class="inline-flex items-center gap-2 rounded-full border border-amber/40 bg-amber/10 px-3 py-1 text-[11px] font-bold uppercase tracking-widest text-amber">
+            Plantão 24h · Ingleses
+          </span>
+          <span class="text-white/55 text-xs sm:text-sm">Florianópolis / SC</span>
+        </div>
+        <h1 class="font-display text-white font-extrabold text-[clamp(2.2rem,7vw,4.5rem)] leading-[1.02] tracking-tight max-w-[14ch] mb-5 reveal" style="transition-delay:.08s">
+          Travou? A gente abre agora — com segurança e sem estragar a fechadura.
+        </h1>
+        <p class="text-white/78 text-base sm:text-lg max-w-lg mb-8 reveal" style="transition-delay:.16s">
+          Chaveiro residencial, automotivo e abertura de emergência no Norte da Ilha. Atendimento ágil em Ingleses e região.
+        </p>
+        <div class="flex flex-wrap gap-3 reveal" style="transition-delay:.24s">
+          <a href="https://wa.me/5548991027744?text=Ol%C3%A1%2C%20preciso%20de%20abertura%20de%20porta%2Fcarro%20com%20urg%C3%AAncia."
+             target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2 rounded-full bg-amber px-6 py-3.5 text-sm font-bold text-charcoal hover:brightness-110 transition">
+            Emergência no WhatsApp
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+          <a href="#orcamento"
+             class="inline-flex items-center rounded-full border border-white/35 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white hover:bg-white/12 transition">
+            Simular valor agora
+          </a>
+        </div>
+        <dl class="mt-12 grid grid-cols-2 sm:grid-cols-3 gap-4 max-w-xl reveal" style="transition-delay:.32s">
+          <div class="rounded-xl border border-white/10 bg-white/5 px-4 py-3">
+            <dt class="text-[10px] uppercase tracking-wider text-white/45 font-semibold">Plantão</dt>
+            <dd class="font-display font-bold text-amber text-sm mt-0.5">24 horas</dd>
+          </div>
+          <div class="rounded-xl border border-white/10 bg-white/5 px-4 py-3">
+            <dt class="text-[10px] uppercase tracking-wider text-white/45 font-semibold">Comercial</dt>
+            <dd class="font-display font-bold text-white text-sm mt-0.5">08:00 – 20:00</dd>
+          </div>
+          <div class="rounded-xl border border-white/10 bg-white/5 px-4 py-3 col-span-2 sm:col-span-1">
+            <dt class="text-[10px] uppercase tracking-wider text-white/45 font-semibold">Base</dt>
+            <dd class="font-display font-bold text-white text-sm mt-0.5">Ingleses</dd>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <section id="servicos" class="mesh py-20 sm:py-28">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <div class="max-w-xl mb-12 reveal">
+          <p class="text-brass font-bold text-sm tracking-widest uppercase mb-2">Serviços</p>
+          <h2 class="font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-charcoal">Chaveiro completo no Norte da Ilha</h2>
+          <p class="mt-3 text-smoke/80">Residencial, automotivo e emergência — com técnicas que preservam sua fechadura sempre que possível.</p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          <article class="service-card reveal rounded-2xl border border-charcoal/10 bg-white/85 p-6 sm:p-7">
+            <div class="mb-5 h-12 w-12 rounded-xl bg-charcoal text-amber flex items-center justify-center">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"/></svg>
+            </div>
+            <h3 class="font-display text-xl font-bold mb-2">Abertura de porta</h3>
+            <p class="text-smoke/70 text-sm leading-relaxed">Porta travada, chave quebrou ou ficou dentro? Abertura residencial e comercial com foco em não danificar o cilindro.</p>
+          </article>
+
+          <article class="service-card reveal rounded-2xl border border-charcoal/10 bg-white/85 p-6 sm:p-7" style="transition-delay:.08s">
+            <div class="mb-5 h-12 w-12 rounded-xl bg-charcoal text-amber flex items-center justify-center">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
+            </div>
+            <h3 class="font-display text-xl font-bold mb-2">Automotivo</h3>
+            <p class="text-smoke/70 text-sm leading-relaxed">Carro trancado, chave no interior ou perda da chave codificada. Atendimento para abertura e soluções de chave automotiva.</p>
+          </article>
+
+          <article class="service-card reveal rounded-2xl border border-charcoal/10 bg-white/85 p-6 sm:p-7" style="transition-delay:.16s">
+            <div class="mb-5 h-12 w-12 rounded-xl bg-charcoal text-amber flex items-center justify-center">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2v-6a2 2 0 012-2h2m4-8V4a2 2 0 114 0v4m-4 0h4m-4 0a4 4 0 00-4 4v2h12v-2a4 4 0 00-4-4z"/></svg>
+            </div>
+            <h3 class="font-display text-xl font-bold mb-2">Cópia e confecção de chaves</h3>
+            <p class="text-smoke/70 text-sm leading-relaxed">Cópias simples, chaves tetra e serviços sob medida. Ideal para reserva de chaves da casa, portão e comércio.</p>
+          </article>
+
+          <article class="service-card reveal rounded-2xl border border-charcoal/10 bg-white/85 p-6 sm:p-7" style="transition-delay:.08s">
+            <div class="mb-5 h-12 w-12 rounded-xl bg-charcoal text-amber flex items-center justify-center">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+            </div>
+            <h3 class="font-display text-xl font-bold mb-2">Troca de fechaduras</h3>
+            <p class="text-smoke/70 text-sm leading-relaxed">Instalação e substituição de fechaduras, complementos de segurança e ajuste em portas e portões.</p>
+          </article>
+
+          <article class="service-card reveal rounded-2xl border border-charcoal/10 bg-white/85 p-6 sm:p-7" style="transition-delay:.16s">
+            <div class="mb-5 h-12 w-12 rounded-xl bg-charcoal text-amber flex items-center justify-center">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            </div>
+            <h3 class="font-display text-xl font-bold mb-2">Emergência 24h</h3>
+            <p class="text-smoke/70 text-sm leading-relaxed">Plantão noturno e finais de semana para quando não dá para esperar. Chame pelo WhatsApp e informe o endereço.</p>
+          </article>
+
+          <article class="service-card reveal rounded-2xl border border-charcoal/10 bg-white/85 p-6 sm:p-7" style="transition-delay:.24s">
+            <div class="mb-5 h-12 w-12 rounded-xl bg-charcoal text-amber flex items-center justify-center">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
+            </div>
+            <h3 class="font-display text-xl font-bold mb-2">Condomínios e empresas</h3>
+            <p class="text-smoke/70 text-sm leading-relaxed">Contratos e atendimentos recorrentes para prédios, lojas e escritórios em Ingleses, Jurerê e arredores.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="galeria" class="bg-charcoal py-20 sm:py-28">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10 reveal">
+          <div>
+            <p class="text-amber font-bold text-sm tracking-widest uppercase mb-2">Galeria</p>
+            <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Ferramenta certa, porta aberta</h2>
+          </div>
+          <p class="text-white/55 text-sm max-w-xs">Clique para ampliar. Registros ilustrativos do dia a dia do chaveiro.</p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
+          <button type="button" class="gallery-item reveal group relative overflow-hidden rounded-2xl aspect-[4/5] md:aspect-square md:row-span-2 md:aspect-auto md:h-full" data-full="images/gallery-1.jpg">
+            <img src="images/gallery-1.jpg" alt="Chaveiro realizando abertura automotiva com ferramentas especializadas" class="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+            <span class="absolute inset-0 bg-gradient-to-t from-charcoal/75 via-transparent to-transparent opacity-90"></span>
+            <span class="absolute bottom-3 left-3 text-white text-xs font-semibold text-left pr-2">Abertura automotiva</span>
+          </button>
+          <button type="button" class="gallery-item reveal group relative overflow-hidden rounded-2xl aspect-square" style="transition-delay:.06s" data-full="images/gallery-2.jpg">
+            <img src="images/gallery-2.jpg" alt="Chaveiro usando máquina de cópia de chaves em serviço móvel" class="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+            <span class="absolute inset-0 bg-gradient-to-t from-charcoal/65 to-transparent"></span>
+            <span class="absolute bottom-3 left-3 text-white text-xs font-semibold">Cópia de chaves</span>
+          </button>
+          <button type="button" class="gallery-item reveal group relative overflow-hidden rounded-2xl aspect-square" style="transition-delay:.12s" data-full="images/gallery-3.jpg">
+            <img src="images/gallery-3.jpg" alt="Cilindro de fechadura e chave em close — componentes de segurança" class="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+            <span class="absolute inset-0 bg-gradient-to-t from-charcoal/65 to-transparent"></span>
+            <span class="absolute bottom-3 left-3 text-white text-xs font-semibold">Cilindro e maçaneta</span>
+          </button>
+          <button type="button" class="gallery-item reveal group relative overflow-hidden rounded-2xl aspect-square" style="transition-delay:.06s" data-full="images/gallery-4.jpg">
+            <img src="images/gallery-4.jpg" alt="Chave de veículo na ignição — serviço automotivo" class="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+            <span class="absolute inset-0 bg-gradient-to-t from-charcoal/65 to-transparent"></span>
+            <span class="absolute bottom-3 left-3 text-white text-xs font-semibold">Chave automotiva</span>
+          </button>
+          <button type="button" class="gallery-item reveal group relative overflow-hidden rounded-2xl aspect-square" style="transition-delay:.12s" data-full="images/gallery-5.jpg">
+            <img src="images/gallery-5.jpg" alt="Cadeado com chave — segurança e fechaduras" class="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+            <span class="absolute inset-0 bg-gradient-to-t from-charcoal/65 to-transparent"></span>
+            <span class="absolute bottom-3 left-3 text-white text-xs font-semibold">Segurança e fechaduras</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="confianca" class="py-20 sm:py-28 bg-cream">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div class="reveal">
+            <p class="text-brass font-bold text-sm tracking-widest uppercase mb-2">Por que confiar</p>
+            <h2 class="font-display text-3xl sm:text-4xl font-extrabold tracking-tight mb-5">Rápido, claro e sem improviso</h2>
+            <p class="text-smoke/75 mb-8 max-w-md">Emergência de chaveiro pede calma e técnica. Você sabe o valor antes, acompanha o serviço e sai com a porta aberta — ou a chave na mão.</p>
+            <div class="space-y-5">
+              <div class="flex gap-4">
+                <div class="mt-1 h-10 w-10 shrink-0 rounded-full bg-parchment flex items-center justify-center text-brass font-display font-bold">01</div>
+                <div>
+                  <h3 class="font-bold text-charcoal">Plantão real 24h</h3>
+                  <p class="text-sm text-smoke/65 mt-1">Madrugada, domingo ou feriado: atendemos quando a fechadura não espera horário comercial.</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div class="mt-1 h-10 w-10 shrink-0 rounded-full bg-parchment flex items-center justify-center text-brass font-display font-bold">02</div>
+                <div>
+                  <h3 class="font-bold text-charcoal">Preservação da fechadura</h3>
+                  <p class="text-sm text-smoke/65 mt-1">Priorizamos métodos que evitam quebra desnecessária — trocamos só quando é inevitável.</p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <div class="mt-1 h-10 w-10 shrink-0 rounded-full bg-parchment flex items-center justify-center text-brass font-display font-bold">03</div>
+                <div>
+                  <h3 class="font-bold text-charcoal">Orçamento pelo WhatsApp</h3>
+                  <p class="text-sm text-smoke/65 mt-1">Você envia o tipo de serviço e a urgência; respondemos com faixa de valor e previsão de chegada.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="reveal relative" style="transition-delay:.12s">
+            <div class="absolute -inset-4 rounded-[2rem] bg-gradient-to-br from-amber/25 via-transparent to-brass/30 blur-2xl"></div>
+            <img src="images/trust.jpg"
+                 alt="Chave na fechadura de porta de madeira — segurança residencial"
+                 class="relative rounded-[1.5rem] w-full h-[420px] object-cover shadow-2xl" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="orcamento" class="py-20 sm:py-28 bg-coal text-white relative overflow-hidden">
+      <div class="absolute inset-0 opacity-30 pointer-events-none"
+           style="background: radial-gradient(circle at 80% 20%, rgba(232,163,23,.4), transparent 42%), radial-gradient(circle at 12% 85%, rgba(245,196,81,.22), transparent 38%);"></div>
+      <div class="relative mx-auto max-w-6xl px-4 sm:px-6">
+        <div class="max-w-xl mb-10 reveal">
+          <p class="text-amber font-bold text-sm tracking-widest uppercase mb-2">Estimativa rápida</p>
+          <h2 class="font-display text-3xl sm:text-4xl font-extrabold tracking-tight">Quanto pode custar o seu chamado?</h2>
+          <p class="mt-3 text-white/65">Escolha o tipo de serviço e o nível de urgência. O valor é uma faixa orientativa para Florianópolis — confirme no WhatsApp.</p>
+        </div>
+
+        <div class="reveal grid lg:grid-cols-[1.2fr_.8fr] gap-6 lg:gap-8">
+          <div class="rounded-3xl border border-white/10 bg-white/5 p-6 sm:p-8 backdrop-blur-sm">
+            <p class="text-sm font-semibold text-white/80 mb-3">Tipo de serviço</p>
+            <div class="grid sm:grid-cols-3 gap-3 mb-8" id="servicoGroup">
+              <button type="button" data-servico="porta" data-base="120" class="estimator-option selected rounded-xl border border-white/15 px-4 py-3 text-left text-sm font-semibold hover:border-amber/50 transition">
+                Abertura de porta
+              </button>
+              <button type="button" data-servico="carro" data-base="150" class="estimator-option rounded-xl border border-white/15 px-4 py-3 text-left text-sm font-semibold hover:border-amber/50 transition">
+                Abertura de carro
+              </button>
+              <button type="button" data-servico="copia" data-base="35" class="estimator-option rounded-xl border border-white/15 px-4 py-3 text-left text-sm font-semibold hover:border-amber/50 transition">
+                Cópia de chave
+              </button>
+            </div>
+
+            <p class="text-sm font-semibold text-white/80 mb-3">Urgência</p>
+            <div class="grid sm:grid-cols-3 gap-3" id="urgGroup">
+              <button type="button" data-urg="normal" data-mult="1" class="estimator-option selected rounded-xl border border-white/15 px-4 py-3 text-left text-sm font-semibold hover:border-amber/50 transition">
+                Horário comercial
+              </button>
+              <button type="button" data-urg="rapida" data-mult="1.35" class="estimator-option rounded-xl border border-white/15 px-4 py-3 text-left text-sm font-semibold hover:border-amber/50 transition">
+                Mesmo dia / à noite
+              </button>
+              <button type="button" data-urg="plantao" data-mult="1.75" class="estimator-option rounded-xl border border-white/15 px-4 py-3 text-left text-sm font-semibold hover:border-amber/50 transition">
+                Plantão 24h imediato
+              </button>
+            </div>
+            <p class="mt-6 text-xs text-white/45 leading-relaxed">Inclui deslocamento base em Ingleses. Outros bairros podem ter acréscimo conforme distância e trânsito.</p>
+          </div>
+
+          <div class="rounded-3xl bg-amber text-charcoal p-6 sm:p-8 flex flex-col justify-between shadow-glow">
+            <div>
+              <p class="text-sm font-semibold opacity-70 mb-1">Estimativa a partir de</p>
+              <p id="precoEstimado" class="font-display text-5xl font-extrabold tracking-tight">R$ 120</p>
+              <p id="precoFaixa" class="mt-2 text-sm opacity-75">Até ~R$ 155 em horário comercial</p>
+              <p class="mt-3 text-sm opacity-75 leading-relaxed">Chaves codificadas, fechaduras especiais ou troca de cilindro podem alterar o valor final.</p>
+            </div>
+            <a id="waOrcamento"
+               href="https://wa.me/5548991027744?text=Ol%C3%A1%2C%20vim%20pelo%20site%20Chaveiro%20Norte%2024h%20e%20quero%20um%20or%C3%A7amento."
+               target="_blank" rel="noopener"
+               class="mt-8 inline-flex items-center justify-center rounded-full bg-charcoal px-6 py-3.5 text-sm font-bold text-white hover:bg-charcoal/90 transition">
+              Confirmar no WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="py-20 sm:py-28 mesh">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <div class="grid lg:grid-cols-2 gap-10">
+          <div class="reveal">
+            <p class="text-brass font-bold text-sm tracking-widest uppercase mb-2">Contato</p>
+            <h2 class="font-display text-3xl sm:text-4xl font-extrabold tracking-tight mb-4">Fechou? Chama agora.</h2>
+            <p class="text-smoke/75 max-w-md mb-8">Chaveiro Norte 24h atende Ingleses, Jurerê, Canasvieiras, Cachoeira do Bom Jesus e norte da Ilha de Santa Catarina.</p>
+            <a href="https://wa.me/5548991027744" target="_blank" rel="noopener" class="inline-flex items-center gap-2 font-display text-2xl font-bold text-charcoal hover:text-brass transition">
+              (48) 99102-7744
+            </a>
+            <p class="mt-3 text-sm text-smoke/60">WhatsApp com resposta prioritária em emergências.</p>
+          </div>
+
+          <div class="reveal rounded-3xl border border-charcoal/10 bg-white/90 p-6 sm:p-8 shadow-lg shadow-charcoal/5" style="transition-delay:.1s">
+            <dl class="space-y-5 text-sm">
+              <div>
+                <dt class="font-semibold text-smoke/50 uppercase tracking-wider text-[11px] mb-1">Endereço</dt>
+                <dd class="text-charcoal font-medium">Av. Águas Mornas, 1550 — Ingleses<br />Florianópolis — SC, 88058-001</dd>
+              </div>
+              <div>
+                <dt class="font-semibold text-smoke/50 uppercase tracking-wider text-[11px] mb-1">Horário</dt>
+                <dd class="text-charcoal font-medium">Plantão: 24 horas<br />Comercial: 08:00 – 20:00</dd>
+              </div>
+              <div>
+                <dt class="font-semibold text-smoke/50 uppercase tracking-wider text-[11px] mb-1">WhatsApp</dt>
+                <dd>
+                  <a href="https://wa.me/5548991027744" target="_blank" rel="noopener" class="text-brass font-bold hover:underline">wa.me/5548991027744</a>
+                </dd>
+              </div>
+              <div>
+                <dt class="font-semibold text-smoke/50 uppercase tracking-wider text-[11px] mb-1">Especialidade</dt>
+                <dd class="text-charcoal font-medium">Chaveiro residencial, automotivo e abertura de emergência</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-charcoal text-white/50 py-10">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-sm">
+      <p class="font-display font-bold text-white">Chaveiro<span class="text-amber"> Norte</span> 24h <span class="font-sans font-normal text-white/40 ml-2">Ingleses · Florianópolis</span></p>
+      <p>© <span id="year"></span> Chaveiro Norte 24h · Demonstração comercial</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/5548991027744?text=Ol%C3%A1%2C%20preciso%20de%20chaveiro%20urgente%20no%20Norte%20da%20Ilha."
+     target="_blank" rel="noopener"
+     class="float-wa fixed bottom-5 right-5 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-xl hover:scale-105 transition"
+     aria-label="WhatsApp">
+    <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <div id="lightbox" class="fixed inset-0 z-[60] bg-charcoal/92 flex items-center justify-center p-4" role="dialog" aria-modal="true">
+    <button id="lightboxClose" class="absolute top-4 right-4 text-white/80 hover:text-white text-3xl leading-none" aria-label="Fechar">&times;</button>
+    <img id="lightboxImg" src="" alt="Ampliação da galeria" class="max-h-[88vh] max-w-full rounded-xl object-contain shadow-2xl" />
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+    mobileMenu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    requestAnimationFrame(() => {
+      document.querySelectorAll('.hero-bg .reveal').forEach(el => el.classList.add('in'));
+    });
+
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    document.querySelectorAll('.gallery-item').forEach(btn => {
+      btn.addEventListener('click', () => {
+        lightboxImg.src = btn.dataset.full;
+        lightbox.classList.add('open');
+      });
+    });
+    document.getElementById('lightboxClose').addEventListener('click', () => lightbox.classList.remove('open'));
+    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) lightbox.classList.remove('open'); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') lightbox.classList.remove('open'); });
+
+    let base = 120, mult = 1;
+    const precoEl = document.getElementById('precoEstimado');
+    const faixaEl = document.getElementById('precoFaixa');
+    const waOrc = document.getElementById('waOrcamento');
+
+    function formatBRL(n) {
+      return n.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL', maximumFractionDigits: 0 });
+    }
+
+    function updateEstimate() {
+      const min = Math.round(base * mult);
+      const max = Math.round(min * 1.28);
+      precoEl.textContent = formatBRL(min);
+      faixaEl.textContent = `Até ~${formatBRL(max)} conforme urgência e deslocamento`;
+      const servico = document.querySelector('#servicoGroup .selected')?.dataset.servico || 'porta';
+      const urg = document.querySelector('#urgGroup .selected')?.dataset.urg || 'normal';
+      const labels = { porta: 'abertura de porta', carro: 'abertura de carro', copia: 'cópia de chave' };
+      const urgLabels = { normal: 'horário comercial', rapida: 'mesmo dia/à noite', plantao: 'plantão 24h imediato' };
+      const msg = encodeURIComponent(
+        `Olá, vim pelo site Chaveiro Norte 24h. Preciso de ${labels[servico]}, urgência: ${urgLabels[urg]}. Estimativa do site: a partir de ${formatBRL(min)}. Endereço: `
+      );
+      waOrc.href = `https://wa.me/5548991027744?text=${msg}`;
+    }
+
+    function bindGroup(groupId, onPick) {
+      const group = document.getElementById(groupId);
+      group.querySelectorAll('.estimator-option').forEach(btn => {
+        btn.addEventListener('click', () => {
+          group.querySelectorAll('.estimator-option').forEach(b => b.classList.remove('selected'));
+          btn.classList.add('selected');
+          onPick(btn);
+          updateEstimate();
+        });
+      });
+    }
+
+    bindGroup('servicoGroup', (btn) => { base = Number(btn.dataset.base); });
+    bindGroup('urgGroup', (btn) => { mult = Number(btn.dataset.mult); });
+    updateEstimate();
+  </script>
+</body>
+</html>
